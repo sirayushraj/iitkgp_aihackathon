@@ -45,15 +45,15 @@ Traditional maintenance strategies often rely on fixed schedules (preventive) or
 
 ## 3. High-Level Architecture
 
-* **The solution follows a linear, modular pipeline where each stage is an independent component.
-* **High-Level Architecture
-* **The solution follows a linear, modular pipeline where each stage is an independent component.
-* **Data Ingestion: Processes raw sensor telemetry data.
-* **Data Preprocessing: Handles data cleaning and Remaining Useful Life (RUL) labeling.
-* **Feature Engineering: Generates rolling statistics, trend extraction, and feature scaling.
-* **Model Training Layer: Supports multiple architectures including Random Forest, XGBoost, LSTM, and Stacking Ensembles.
-* **Model Serialization: Trained models and scalers are saved as .pkl, .json, or .h5 artifacts.
-* **Inference Service: A user-facing Streamlit dashboard for real-time decision support.
+* The solution follows a linear, modular pipeline where each stage is an independent component.
+* High-Level Architecture
+* The solution follows a linear, modular pipeline where each stage is an independent component.
+* Data Ingestion: Processes raw sensor telemetry data.
+* Data Preprocessing: Handles data cleaning and Remaining Useful Life (RUL) labeling.
+* Feature Engineering: Generates rolling statistics, trend extraction, and feature scaling.
+* Model Training Layer: Supports multiple architectures including Random Forest, XGBoost, LSTM, and Stacking Ensembles.
+* Model Serialization: Trained models and scalers are saved as .pkl, .json, or .h5 artifacts.
+* Inference Service: A user-facing Streamlit dashboard for real-time decision support.
 
 ## 4. Repository Structure
 ```text
