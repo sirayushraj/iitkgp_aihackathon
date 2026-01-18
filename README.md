@@ -49,33 +49,35 @@ The solution follows a linear, modular pipeline where each stage is an independe
 
 ## ┌────────────────────┐ │ Raw Sensor Data │ └─────────┬──────────┘ ↓ ┌──────────────────────┐ │ Data Preprocessing │ │ - Cleaning │ │ - RUL labeling │ └─────────┬────────────┘ ↓ ┌────────────────────────┐ │ Feature Engineering │ │ - Rolling statistics │ │ - Trend extraction │ │ - Scaling │ └─────────┬──────────────┘ ↓ ┌─────────────────────────────────────┐ │ Model Training Layer │ │ - Random Forest │ │ - XGBoost │ │ - LSTM │ │ - Hyperparameter Optimization │ │ - Stacking Ensemble │ └─────────┬──────────────────────────┘ ↓ ┌────────────────────────┐ │ Model Serialization │ │ (.pkl / .json / .h5) │ └─────────┬──────────────┘ ↓ ┌────────────────────────┐ │ Inference Service │ │ (Streamlit App) │ └────────────────────────┘
 
-## 4. Repository Structure
+```text
 iit kgp/
-├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER [cite: 43]
-│   ├── app.py                     # Streamlit operational dashboard [cite: 43]
-│   ├── run_dashboard.bat          # Windows 1-click launcher [cite: 43]
-│   ├── requirements.txt           # Dashboard dependencies [cite: 43]
-│   ├── data/                      # Sample input data for demonstration [cite: 43, 44]
-│   └── models/                    # Deployment artifacts (Models & Scalers) [cite: 43, 44]
+[cite_start]├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER [cite: 43]
+[cite_start]│   ├── app.py                     # Streamlit operational dashboard [cite: 43]
+[cite_start]│   ├── run_dashboard.bat          # Windows 1-click launcher [cite: 43]
+[cite_start]│   ├── requirements.txt           # Dashboard dependencies [cite: 43]
+[cite_start]│   ├── data/                      # Sample input data for demonstration [cite: 43]
+[cite_start]│   └── models/                    # Deployment artifacts (Models & Scalers) [cite: 43]
 ├── DATA FILES
-│   ├── train_FD001.txt            # Historical training data [cite: 44]
-│   ├── test_FD001.txt             # Test data for validation [cite: 44]
-│   └── RUL_FD001.txt              # Ground truth RUL for test set [cite: 44, 45]
+[cite_start]│   ├── train_FD001.txt            # Historical training data [cite: 44]
+[cite_start]│   ├── test_FD001.txt             # Test data for validation [cite: 44]
+[cite_start]│   └── RUL_FD001.txt              # Ground truth RUL for test set [cite: 44]
 ├── PIPELINE SCRIPTS
-│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal [cite: 45]
-│   ├── get_features.py            # Feature engineering & scaling [cite: 45]
-│   ├── analyze_data.py            # EDA & Data visualization [cite: 45]
-│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) [cite: 45]
+[cite_start]│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal [cite: 45]
+[cite_start]│   ├── get_features.py            # Feature engineering & scaling [cite: 45]
+[cite_start]│   ├── analyze_data.py            # EDA & Data visualization [cite: 45]
+[cite_start]│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) [cite: 45]
 ├── TRAINING MODULES
-│   ├── train_model.py             # Random Forest (Baseline) [cite: 45, 46]
-│   ├── train_model_optimized.py   # Hyperparameter tuning logic [cite: 46]
-│   ├── train_model_xgboost.py     # Gradient Boosting implementation [cite: 46]
-│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) [cite: 46]
-│   ├── train_stacking.py          # Ensemble Stacking strategy [cite: 46]
-│   └── train_final.py             # Final Production Model consolidation [cite: 46]
+[cite_start]│   ├── train_model.py             # Random Forest (Baseline) [cite: 45]
+[cite_start]│   ├── train_model_optimized.py   # Hyperparameter tuning logic [cite: 46]
+[cite_start]│   ├── train_model_xgboost.py     # Gradient Boosting implementation [cite: 46]
+[cite_start]│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) [cite: 46]
+[cite_start]│   ├── train_stacking.py          # Ensemble Stacking strategy [cite: 46]
+[cite_start]│   └── train_final.py             # Final Production Model consolidation [cite: 46]
 └── QUALITY ASSURANCE
-    ├── inspect_pkl.py             # Artifact structural validation [cite: 47]
-    └── verify_frontend.py         # Inference pipeline integration test [cite: 47]
+    [cite_start]├── inspect_pkl.py             # Artifact structural validation [cite: 47]
+    [cite_start]└── verify_frontend.py         # Inference pipeline integration test [cite: 47]
+
+```
 
 ## 5. Data Description
 
