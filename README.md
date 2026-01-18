@@ -44,11 +44,12 @@ Traditional maintenance strategies often rely on fixed schedules (preventive) or
 | **Logistics** | Optimizes spare parts inventory and maintenance crew scheduling. |
 
 ## 3. High-Level Architecture
-
+```text
 The solution follows a linear, modular pipeline where each stage is an independent component.
 
 ## ┌────────────────────┐ │ Raw Sensor Data │ └─────────┬──────────┘ ↓ ┌──────────────────────┐ │ Data Preprocessing │ │ - Cleaning │ │ - RUL labeling │ └─────────┬────────────┘ ↓ ┌────────────────────────┐ │ Feature Engineering │ │ - Rolling statistics │ │ - Trend extraction │ │ - Scaling │ └─────────┬──────────────┘ ↓ ┌─────────────────────────────────────┐ │ Model Training Layer │ │ - Random Forest │ │ - XGBoost │ │ - LSTM │ │ - Hyperparameter Optimization │ │ - Stacking Ensemble │ └─────────┬──────────────────────────┘ ↓ ┌────────────────────────┐ │ Model Serialization │ │ (.pkl / .json / .h5) │ └─────────┬──────────────┘ ↓ ┌────────────────────────┐ │ Inference Service │ │ (Streamlit App) │ └────────────────────────┘
-
+```
+## 4. Repository Structure
 ```text
 iit kgp/
 [cite_start]├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER 
