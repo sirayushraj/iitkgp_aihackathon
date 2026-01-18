@@ -62,3 +62,5 @@ iit kgp/
 └── QUALITY ASSURANCE
     ├── inspect_pkl.py             # Artifact structural validation [cite: 47]
     └── verify_frontend.py         # Inference pipeline integration test [cite: 47]
+
+## 4. Data DescriptionThe dataset consists of time-series data from multiple aircraft engines1. Each engine starts with different degrees of initial wear and manufacturing variation2.Engine ID: Unique identifier for the asset3.Cycle: The current operational time index (counter)4.Operational Settings (3): Environmental parameters (Altitude, Mach Number, Throttle Resolver Angle)5.Sensor Measurements (21): Telemetry from subsystems (Fan speed, Core speed, Pressure, Temperature, etc.)6.Target Variable (RUL): Calculated as $$RUL = \text{Max Observed Cycle} - \text{Current Cycle}$$
