@@ -51,31 +51,31 @@ The solution follows a linear, modular pipeline where each stage is an independe
 
 ```text
 iit kgp/
-[cite_start]├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER [cite: 43]
-[cite_start]│   ├── app.py                     # Streamlit operational dashboard [cite: 43]
-[cite_start]│   ├── run_dashboard.bat          # Windows 1-click launcher [cite: 43]
-[cite_start]│   ├── requirements.txt           # Dashboard dependencies [cite: 43]
-[cite_start]│   ├── data/                      # Sample input data for demonstration [cite: 43]
-[cite_start]│   └── models/                    # Deployment artifacts (Models & Scalers) [cite: 43]
+[cite_start]├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER 
+[cite_start]│   ├── app.py                     # Streamlit operational dashboard 
+[cite_start]│   ├── run_dashboard.bat          # Windows 1-click launcher 
+[cite_start]│   ├── requirements.txt           # Dashboard dependencies 
+[cite_start]│   ├── data/                      # Sample input data for demonstration 
+[cite_start]│   └── models/                    # Deployment artifacts (Models & Scalers) 
 ├── DATA FILES
-[cite_start]│   ├── train_FD001.txt            # Historical training data [cite: 44]
-[cite_start]│   ├── test_FD001.txt             # Test data for validation [cite: 44]
-[cite_start]│   └── RUL_FD001.txt              # Ground truth RUL for test set [cite: 44]
+[cite_start]│   ├── train_FD001.txt            # Historical training data 
+[cite_start]│   ├── test_FD001.txt             # Test data for validation 
+[cite_start]│   └── RUL_FD001.txt              # Ground truth RUL for test set 
 ├── PIPELINE SCRIPTS
-[cite_start]│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal [cite: 45]
-[cite_start]│   ├── get_features.py            # Feature engineering & scaling [cite: 45]
-[cite_start]│   ├── analyze_data.py            # EDA & Data visualization [cite: 45]
-[cite_start]│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) [cite: 45]
+[cite_start]│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal 
+[cite_start]│   ├── get_features.py            # Feature engineering & scaling 
+[cite_start]│   ├── analyze_data.py            # EDA & Data visualization 
+[cite_start]│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) 
 ├── TRAINING MODULES
-[cite_start]│   ├── train_model.py             # Random Forest (Baseline) [cite: 45]
-[cite_start]│   ├── train_model_optimized.py   # Hyperparameter tuning logic [cite: 46]
-[cite_start]│   ├── train_model_xgboost.py     # Gradient Boosting implementation [cite: 46]
-[cite_start]│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) [cite: 46]
-[cite_start]│   ├── train_stacking.py          # Ensemble Stacking strategy [cite: 46]
-[cite_start]│   └── train_final.py             # Final Production Model consolidation [cite: 46]
+[cite_start]│   ├── train_model.py             # Random Forest (Baseline) 
+[cite_start]│   ├── train_model_optimized.py   # Hyperparameter tuning logic 
+[cite_start]│   ├── train_model_xgboost.py     # Gradient Boosting implementation 
+[cite_start]│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) 
+[cite_start]│   ├── train_stacking.py          # Ensemble Stacking strategy 
+[cite_start]│   └── train_final.py             # Final Production Model consolidation 
 └── QUALITY ASSURANCE
-    [cite_start]├── inspect_pkl.py             # Artifact structural validation [cite: 47]
-    [cite_start]└── verify_frontend.py         # Inference pipeline integration test [cite: 47]
+    [cite_start]├── inspect_pkl.py             # Artifact structural validation 
+    [cite_start]└── verify_frontend.py         # Inference pipeline integration test 
 
 ```
 
