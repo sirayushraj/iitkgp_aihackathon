@@ -45,44 +45,44 @@ Traditional maintenance strategies often rely on fixed schedules (preventive) or
 
 ## 3. High-Level Architecture
 
-The solution follows a linear, modular pipeline where each stage is an independent component.
-High-Level Architecture
-The solution follows a linear, modular pipeline where each stage is an independent component.
-Data Ingestion: Processes raw sensor telemetry data.
-Data Preprocessing: Handles data cleaning and Remaining Useful Life (RUL) labeling.
-Feature Engineering: Generates rolling statistics, trend extraction, and feature scaling.
-Model Training Layer: Supports multiple architectures including Random Forest, XGBoost, LSTM, and Stacking Ensembles.
-Model Serialization: Trained models and scalers are saved as .pkl, .json, or .h5 artifacts.
-Inference Service: A user-facing Streamlit dashboard for real-time decision support.
+*The solution follows a linear, modular pipeline where each stage is an independent component.
+*High-Level Architecture
+*The solution follows a linear, modular pipeline where each stage is an independent component.
+*Data Ingestion: Processes raw sensor telemetry data.
+*Data Preprocessing: Handles data cleaning and Remaining Useful Life (RUL) labeling.
+*Feature Engineering: Generates rolling statistics, trend extraction, and feature scaling.
+*Model Training Layer: Supports multiple architectures including Random Forest, XGBoost, LSTM, and Stacking Ensembles.
+*Model Serialization: Trained models and scalers are saved as .pkl, .json, or .h5 artifacts.
+*Inference Service: A user-facing Streamlit dashboard for real-time decision support.
 
 ## 4. Repository Structure
 ```text
-iit kgp/
-[cite_start]├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER 
-[cite_start]│   ├── app.py                     # Streamlit operational dashboard 
-[cite_start]│   ├── run_dashboard.bat          # Windows 1-click launcher 
-[cite_start]│   ├── requirements.txt           # Dashboard dependencies 
-[cite_start]│   ├── data/                      # Sample input data for demonstration 
-[cite_start]│   └── models/                    # Deployment artifacts (Models & Scalers) 
-├── DATA FILES
-[cite_start]│   ├── train_FD001.txt            # Historical training data 
-[cite_start]│   ├── test_FD001.txt             # Test data for validation 
-[cite_start]│   └── RUL_FD001.txt              # Ground truth RUL for test set 
-├── PIPELINE SCRIPTS
-[cite_start]│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal 
-[cite_start]│   ├── get_features.py            # Feature engineering & scaling 
-[cite_start]│   ├── analyze_data.py            # EDA & Data visualization 
-[cite_start]│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) 
-├── TRAINING MODULES
-[cite_start]│   ├── train_model.py             # Random Forest (Baseline) 
-[cite_start]│   ├── train_model_optimized.py   # Hyperparameter tuning logic 
-[cite_start]│   ├── train_model_xgboost.py     # Gradient Boosting implementation 
-[cite_start]│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) 
-[cite_start]│   ├── train_stacking.py          # Ensemble Stacking strategy 
-[cite_start]│   └── train_final.py             # Final Production Model consolidation 
-└── QUALITY ASSURANCE
-    [cite_start]├── inspect_pkl.py             # Artifact structural validation 
-    [cite_start]└── verify_frontend.py         # Inference pipeline integration test 
+     iit kgp/
+            ├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER 
+            │   ├── app.py                     # Streamlit operational dashboard 
+            │   ├── run_dashboard.bat          # Windows 1-click launcher 
+            │   ├── requirements.txt           # Dashboard dependencies 
+            │   ├── data/                      # Sample input data for demonstration 
+            │   └── models/                    # Deployment artifacts (Models & Scalers) 
+            ├── DATA FILES
+            │   ├── train_FD001.txt            # Historical training data 
+            │   ├── test_FD001.txt             # Test data for validation 
+            │   └── RUL_FD001.txt              # Ground truth RUL for test set 
+            ├── PIPELINE SCRIPTS
+            │   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal 
+            │   ├── get_features.py            # Feature engineering & scaling 
+            │   ├── analyze_data.py            # EDA & Data visualization 
+            │   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) 
+            ├── TRAINING MODULES
+            │   ├── train_model.py             # Random Forest (Baseline) 
+            │   ├── train_model_optimized.py   # Hyperparameter tuning logic 
+            │   ├── train_model_xgboost.py     # Gradient Boosting implementation 
+            │   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) 
+            │   ├── train_stacking.py          # Ensemble Stacking strategy 
+            │   └── train_final.py             # Final Production Model consolidation 
+            └── QUALITY ASSURANCE
+                ├── inspect_pkl.py             # Artifact structural validation 
+                └── verify_frontend.py         # Inference pipeline integration test 
 
 ```
 
