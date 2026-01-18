@@ -50,40 +50,32 @@ The solution follows a linear, modular pipeline where each stage is an independe
 ## ┌────────────────────┐ │ Raw Sensor Data │ └─────────┬──────────┘ ↓ ┌──────────────────────┐ │ Data Preprocessing │ │ - Cleaning │ │ - RUL labeling │ └─────────┬────────────┘ ↓ ┌────────────────────────┐ │ Feature Engineering │ │ - Rolling statistics │ │ - Trend extraction │ │ - Scaling │ └─────────┬──────────────┘ ↓ ┌─────────────────────────────────────┐ │ Model Training Layer │ │ - Random Forest │ │ - XGBoost │ │ - LSTM │ │ - Hyperparameter Optimization │ │ - Stacking Ensemble │ └─────────┬──────────────────────────┘ ↓ ┌────────────────────────┐ │ Model Serialization │ │ (.pkl / .json / .h5) │ └─────────┬──────────────┘ ↓ ┌────────────────────────┐ │ Inference Service │ │ (Streamlit App) │ └────────────────────────┘
 
 ## 4. Repository Structure
-
-The project is organized to separate the core ML pipeline from the deployment layer.
-
 iit kgp/
-│
-├── ai\_hackathon/ # INFERENCE & VISUALIZATION LAYER
-│ ├── app.py # Streamlit operational dashboard
-│ ├── run\_dashboard.bat # Windows 1-click launcher
-│ ├── requirements.txt # Dashboard dependencies
-│ ├── data/ # Sample input data for demonstration
-│ └── models/ # Deployment artifacts (Models & Scalers)
-│
+├── ai_hackathon/                  # INFERENCE & VISUALIZATION LAYER [cite: 43]
+│   ├── app.py                     # Streamlit operational dashboard [cite: 43]
+│   ├── run_dashboard.bat          # Windows 1-click launcher [cite: 43]
+│   ├── requirements.txt           # Dashboard dependencies [cite: 43]
+│   ├── data/                      # Sample input data for demonstration [cite: 43, 44]
+│   └── models/                    # Deployment artifacts (Models & Scalers) [cite: 43, 44]
 ├── DATA FILES
-│ ├── train\_FD001.txt # Historical training data
-│ ├── test\_FD001.txt # Test data for validation
-│ └── RUL\_FD001.txt # Ground truth RUL for test set
-│
+│   ├── train_FD001.txt            # Historical training data [cite: 44]
+│   ├── test_FD001.txt             # Test data for validation [cite: 44]
+│   └── RUL_FD001.txt              # Ground truth RUL for test set [cite: 44, 45]
 ├── PIPELINE SCRIPTS
-│ ├── preprocess\_data.py # Cleaning, RUL labeling, outlier removal
-│ ├── get\_features.py # Feature engineering & scaling
-│ ├── analyze\_data.py # EDA & Data visualization
-│ └── compare\_ruls.py # Post-training analysis (Pred vs Actual)
-│
+│   ├── preprocess_data.py         # Cleaning, RUL labeling, outlier removal [cite: 45]
+│   ├── get_features.py            # Feature engineering & scaling [cite: 45]
+│   ├── analyze_data.py            # EDA & Data visualization [cite: 45]
+│   └── compare_ruls.py            # Post-training analysis (Pred vs Actual) [cite: 45]
 ├── TRAINING MODULES
-│ ├── train\_model.py # Random Forest (Baseline)
-│ ├── train\_model\_optimized.py # Hyperparameter tuning logic
-│ ├── train\_model\_xgboost.py # Gradient Boosting implementation
-│ ├── train\_lstm.py # Long Short-Term Memory (Deep Learning)
-│ ├── train\_stacking.py # Ensemble Stacking strategy
-│ └── train\_final.py # Final Production Model consolidation
-│
+│   ├── train_model.py             # Random Forest (Baseline) [cite: 45, 46]
+│   ├── train_model_optimized.py   # Hyperparameter tuning logic [cite: 46]
+│   ├── train_model_xgboost.py     # Gradient Boosting implementation [cite: 46]
+│   ├── train_lstm.py              # Long Short-Term Memory (Deep Learning) [cite: 46]
+│   ├── train_stacking.py          # Ensemble Stacking strategy [cite: 46]
+│   └── train_final.py             # Final Production Model consolidation [cite: 46]
 └── QUALITY ASSURANCE
- ├── inspect\_pkl.py # Artifact structural validation
- └── verify\_frontend.py # Inference pipeline integration test
+    ├── inspect_pkl.py             # Artifact structural validation [cite: 47]
+    └── verify_frontend.py         # Inference pipeline integration test [cite: 47]
 
 ## 5. Data Description
 
